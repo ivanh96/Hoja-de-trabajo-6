@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main 
 {
@@ -45,6 +46,7 @@ public class Main
 		Hash<String> desarrollo_Java = new Hash(implement);
 		Hash<String> desarrollo_Web = new Hash(implement);
 		Hash<String> desarrollo_Movil = new Hash(implement);
+		Hash<String> temp = new Hash(implement);
 		
 
 		while(ingreso == 0){
@@ -89,7 +91,7 @@ public class Main
 				}
 				
 			
-			System.out.println("¿Desea ingresar otro desarrollador?");
+			System.out.println("Desea ingresar otro desarrollador?");
 			System.out.println("1.Si \n2.No\n");
 
 			try{
@@ -109,12 +111,43 @@ public class Main
 
 		}
 
-		System.out.println("Los desarrolladores con experiencia en Java, web y en celulares son: ");
-		System.out.println("Los desarrolladores con experiencia en Java pero sin experiencia web son: ");
-		System.out.println("Los desarrolladores con experiencia web y en celulares, pero no en Java son: ");
-		System.out.println("Los desarrolladores con experiencia en Java, con web o en celulares son: ");
-		System.out.println("Los conjunto de desarrolladores es: ");
-		System.out.println("Los desarrolladores de este conjunto son: ");
+		Set<String> javac = desarrollo_Java.getConjunto();
+		Set<String> webc = desarrollo_Web.getConjunto();
+		Set<String> movilc = desarrollo_Movil.getConjunto();
+		Set<String> tempc = desarrollo_Java.getConjunto();
+
+		tempc = temp.getIntersec3(javac, webc, movilc);
+		System.out.println("Los desarrolladores con experiencia en Java, web y en celulares son: \n"+tempc+"");
+
+		tempc = temp.getResta(javac, webc);
+		System.out.println("Los desarrolladores con experiencia en Java pero sin experiencia web son: \n"+tempc+"");
+
+		tempc = desarrollo_Web.getResta(movilc, javac);
+		System.out.println("Los desarrolladores con experiencia web y en celulares, pero no en Java son: \n"+tempc+"");
+
+		tempc = desarrollo_Java.getJuntos(webc, movilc);
+		System.out.println("Los desarrolladores con experiencia en Java, con web o en celulares son: \n"+tempc+"");
+
+		int j = desarrollo_Java.getElementos();
+		int w = desarrollo_Web.getElementos();
+		int m = desarrollo_Movil.getElementos();
+		String mayor = "";
+		if (j > w && j > m){
+			mayor = "JAVA";
+			tempc = javac;
+		}
+
+		if (w > j && w > m){
+			mayor = "WEB";
+			tempc = webc;
+		}
+
+		if (m > j && m > w){
+			mayor = "MOVIL";
+			tempc = movilc;
+		}
+		System.out.println("El conjunto con la mayor cantidad de desarrolladores es: "+mayor+"");
+		System.out.println("Los desarrolladores de este conjunto son: \n"+tempc+"");
 
 	}
 
