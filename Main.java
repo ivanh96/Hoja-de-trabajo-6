@@ -8,6 +8,7 @@ public class Main
 	{
 		scan = new Scanner(System.in);
 		int implement = 0;
+		int ingreso;
 		
 		System.out.println("Bienvenido al programa sobre programadores");
 		
@@ -100,10 +101,10 @@ public class Main
 				System.out.println("1.Si \n2.No");
 			}
 			if (ingreso == 1)
-				ingreso == 0;
+				ingreso = 0;
 
 			if (ingreso == 2)
-				ingreso == 1;
+				ingreso = 1;
 
 			}	
 		}
