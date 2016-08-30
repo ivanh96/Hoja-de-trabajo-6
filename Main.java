@@ -103,8 +103,6 @@ public class Main
 			catch (NumberFormatException e){
 
 				System.out.println("Error, Opcion Invalida.\n.");
-				System.out.println("¿Desea ingresar otro desarrollador?");
-				System.out.println("1.Si \n2.No");
 			}
 
 			if (ingreso == 1){
