@@ -15,31 +15,29 @@ public class Main
 		while (implement == 0){
 
 			System.out.println("Por favor seleccione la implementacion a utilizar: ");
-			System.out.println("1.HashTable \n2.LinkedHashTable \n3.TreeTable");
+			System.out.println("1.HashTable \n2.LinkedHashTable \n3.TreeTable\n");
 
 			try{
 				implement = Integer.valueOf(scan.nextLine());
 			}
 
 			catch (NumberFormatException e){
-				System.out.println("Error, Caracter Invalido.\n.");
-				implement = 0;
 			}
 
 			if (implement < 1 || implement > 3){
-				System.out.println("Error, Opcion Invalida.\n.");
+				System.out.println("Error. Opcion Invalida.\n");
 				implement = 0;
 			}
 
 			if (implement == 1){
 			//Factory de HASHSET
 			}
-       			if (implement == 2){
-            		//Factory de TREESET
-       			}
-        		if (implement == 3){
-            		//Factory de LINKEDHASHSET
-        		}
+       		if (implement == 2){
+            //Factory de TREESET
+       		}
+        	if (implement == 3){
+            //Factory de LINKEDHASHSET
+        	}
 		}
 	    	
 		
@@ -58,8 +56,8 @@ public class Main
 			System.out.println("Ingrese el nombre del desarrollador: ");
 			nombre = scan.nextLine();
 			
-			System.out.println("Ingrese los numeros correspondientes a las habilidades del desarrollador (numeros juntos. ej: 123): ");
-			System.out.println("1.Java \n2.Web \n3.Moviles");
+			System.out.println("Ingrese el numero que corresponde a la experiencia del desarrollador\nSi el desarrollador tiene experiencia en dos o los tres conjuntos ingrese todos los numeros juntos [ej. 123] ");
+			System.out.println("1.Java \n2.Web \n3.Moviles\n");
 			experiencia = Integer.valueOf(scan.nextLine());
 			
 			switch(experiencia){
@@ -93,7 +91,7 @@ public class Main
 				
 			
 			System.out.println("¿Desea ingresar otro desarrollador?");
-			System.out.println("1.Si \n2.No");
+			System.out.println("1.Si \n2.No\n");
 
 			try{
 
@@ -102,7 +100,8 @@ public class Main
 
 			catch (NumberFormatException e){
 
-				System.out.println("Error, Opcion Invalida.\n.");
+				System.out.println("Error. Opcion Invalida.\n");
+				
 			}
 
 			if (ingreso == 1){
