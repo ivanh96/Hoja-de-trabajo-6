@@ -8,35 +8,38 @@ public class Main
 	{
 		scan = new Scanner(System.in);
 		int implement = 0;
-		int ingreso;
+		int ingreso = 0;
 		
 		System.out.println("Bienvenido al programa sobre programadores");
 		
-		while (implement == 0)
-		{
+		while (implement == 0){
+
 			System.out.println("Por favor seleccione la implementacion a utilizar: ");
-			System.out.println("1.HashTable \n2.LinkedHashTable \n3.TreeTable\n");
-			try
-			{
+			System.out.println("1.HashTable \n2.LinkedHashTable \n3.TreeTable");
+
+			try{
 				implement = Integer.valueOf(scan.nextLine());
 			}
-			catch (NumberFormatException e)
-			{
+
+			catch (NumberFormatException e){
 				System.out.println("Error, Caracter Invalido.\n.");
 				implement = 0;
 			}
-			if (implement < 1 || implement > 3)
+
+			if (implement < 1 || implement > 3){
 				System.out.println("Error, Opcion Invalida.\n.");
 				implement = 0;
+			}
 
-			if (implement == 1)
-            		//Factory de HASHSET
-       			if (implement == 2)
-            		//Factory de TREESET
-        		if (implement == 3)
-            		//Factory de LINKEDHASHSET
-        		ingreso = 0;
-			
+			if (implement == 1){
+			//Factory de HASHSET
+			}
+       		if (implement == 2){
+            //Factory de TREESET
+       		}
+        	if (implement == 3){
+            //Factory de LINKEDHASHSET
+        	}
 		}
 	    	
 		
@@ -44,10 +47,11 @@ public class Main
 		//Hay que crear la clase "X"
 		X desarrollo_Java = new X(implement);
 		X desarrollo_Web = new X(implement);
-		X desarrollo_Movil = new Tables(implement);
+		X desarrollo_Movil = new X(implement);
 		
 
 		while(ingreso == 0){
+
 			String nombre = " "; 
 			Integer experiencia = 0; 
 			
@@ -85,28 +89,28 @@ public class Main
 					desarrollo_Web.addElement(nombre);
 					desarrollo_Movil.addElement(nombre);
 					break;
+				}
+				
 			
-
 			System.out.println("¿Desea ingresar otro desarrollador?");
 			System.out.println("1.Si \n2.No");
 
-			try
-			{
+			try{
+
 				ingreso = Integer.valueOf(scan.nextLine());
 			}
-			catch (NumberFormatException e)
-			{
+
+			catch (NumberFormatException e){
+
 				System.out.println("Error, Opcion Invalida.\n.");
 				System.out.println("¿Desea ingresar otro desarrollador?");
 				System.out.println("1.Si \n2.No");
 			}
-			if (ingreso == 1)
+
+			if (ingreso == 1){
 				ingreso = 0;
+			}
 
-			if (ingreso == 2)
-				ingreso = 1;
-
-			}	
 		}
 
 		System.out.println("Los desarrolladores con experiencia en Java, web y en celulares son: ");
