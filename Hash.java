@@ -25,8 +25,15 @@ public class Hash<E>
         return principal;
     }
     
-    //Desarrolladores con todos lo ambitos 
-	public Set<E> getIntersec(Set<E> Conjunto1, Set<E> Conjunto2, Set<E> Conjunto3)
+    //Devuelve la cantidad de elementos en el conjunto
+    public int getElementos(){
+        
+        int size = principal.size();
+        return size;
+    }
+
+    //Desarrolladores con todos los ambitos 
+	public Set<E> getIntersec3(Set<E> Conjunto1, Set<E> Conjunto2, Set<E> Conjunto3)
 	{
 		temporal.clear();
 		temporal.addAll(Conjunto1);
@@ -36,7 +43,7 @@ public class Hash<E>
 	}
 	
 	//Desarrolladores con un ambito si otro no 
-	public Set<E> getIntersec(Set<E> Conjunto1, Set<E> Conjunto2)
+	public Set<E> getIntersec2(Set<E> Conjunto1, Set<E> Conjunto2)
 	{
 		temporal.clear();
         temporal.addAll(Conjunto1);
@@ -49,14 +56,15 @@ public class Hash<E>
 	{
 		temporal.clear();
 		temporal.addAll(Conjunto1);
+		temporal.addAll(Conjunto2);
 		return temporal;
 	}
 	//Se resta el tercero del conjunto generado para saber quienes quedan fuera
 	public Set<E> getResta(Set<E> Conjunto1, Set<E> Conjunto2)
 	{
 		temporal.clear();
-		temporal.addAll(Conjunto2);
-		temporal.removeAll(Conjunto1);
+		temporal.addAll(Conjunto1);
+		temporal.removeAll(Conjunto2);
 		return temporal;
 	}
 	
