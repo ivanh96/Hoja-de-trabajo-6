@@ -93,17 +93,6 @@ public class Main
 			System.out.println("¿Desea ingresar otro desarrollador?");
 			System.out.println("1.Si \n2.No\n");
 
-			try{
-
-				ingreso = Integer.valueOf(scan.nextLine());
-			}
-
-			catch (NumberFormatException e){
-
-				System.out.println("Error. Opcion Invalida.\n");
-				
-			}
-
 			if (ingreso == 1){
 				ingreso = 0;
 			}
