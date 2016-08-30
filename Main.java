@@ -42,10 +42,9 @@ public class Main
 	    	
 		
 		//Creacion de Interface a Utilizar 
-		//Hay que crear la clase "X"
-		X desarrollo_Java = new X(implement);
-		X desarrollo_Web = new X(implement);
-		X desarrollo_Movil = new X(implement);
+		Hash<String> desarrollo_Java = new Hash(implement);
+		Hash<String> desarrollo_Web = new Hash(implement);
+		Hash<String> desarrollo_Movil = new Hash(implement);
 		
 
 		while(ingreso == 0){
@@ -90,8 +89,19 @@ public class Main
 				}
 				
 			
-			System.out.println("Â¿Desea ingresar otro desarrollador?");
+			System.out.println("¿Desea ingresar otro desarrollador?");
 			System.out.println("1.Si \n2.No\n");
+
+			try{
+
+				ingreso = Integer.valueOf(scan.nextLine());
+			}
+
+			catch (NumberFormatException e){
+
+				System.out.println("Error. Opcion Invalida.\n");
+				
+			}
 
 			if (ingreso == 1){
 				ingreso = 0;
